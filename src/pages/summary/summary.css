@@ -1,0 +1,15 @@
+#summary{
+    min-height: calc(100vh - 50px);
+}
+
+#summary #main{
+    background-color: #fff;
+    padding: 10px;
+    width: 70%;
+}
+#summary .total_account{
+    font-size: 1.5rem;
+}
+#summary .price_conv{
+    font-size: .75rem;
+}

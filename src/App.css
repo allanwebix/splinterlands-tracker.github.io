@@ -1,0 +1,8 @@
+.App{
+  background: linear-gradient(#000,#333);
+}
+
+html body.modal-open{
+  height: 100%;
+  overflow: hidden;
+}
