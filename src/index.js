@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import store from './store/store';
-import {BrowserRouter as Router, useLocation} from 'react-router-dom';
+import {HashRouter as Router, useLocation} from 'react-router-dom';
 
 
 ReactDOM.render(

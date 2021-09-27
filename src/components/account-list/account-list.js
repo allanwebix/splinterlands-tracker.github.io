@@ -8,7 +8,6 @@ const AccountList = (props) => {
 
     const dispatch = useDispatch();
     const summary = useSelector(state => state.summary);
-    console.log(props);
 
     return (
         <div id="account-list" className="w-100" style={{backgroundColor: "#444"}}>
@@ -68,7 +67,6 @@ const AccountList = (props) => {
                                     //delete in localStorage
                                     let accountList = JSON.parse(localStorage.getItem('accounts'));
                                     let filtered = accountList.filter(acc => acc !== a.username);
-                                    console.log(filtered);
                                     localStorage.setItem('accounts', JSON.stringify(filtered));
                                 }}>DELETE</button></td>
                             </tr>

@@ -7,7 +7,6 @@ export const getDECPrice = async(curr) => {
     await API.Price.getDECPrice(curr)
     .then(resp => {
         dec_price = resp["dark-energy-crystals"][`${curr.toLowerCase()}`];
-        console.log(dec_price);
     })
     .catch(error => {
         console.error(error)

@@ -69,7 +69,7 @@ const Summary = () => {
         await API.Splinterlands.getPlayerSettings(username)
         .then(resp => {
             power = resp.collection_power;
-            rating = resp.season_details.rating
+            rating = resp.rating
            
             const league = [
                 {id: 0, name: 'Novice'},
@@ -166,11 +166,15 @@ const Summary = () => {
     useEffect(()=> {
         const init = async () => {
             //get stored settings
-            const settings = JSON.parse(localStorage.getItem('settings'));
+            let  settings = JSON.parse(localStorage.getItem('settings'));
             if (settings)
             {
                 dispatch(UISlice.actions.setCurrency(settings.currency));
                 dispatch(UISlice.actions.setTheme(settings.darkTheme));
+            }
+            else{
+                settings = {currency: ui.currency, darkTheme : ui.darkTheme};
+                localStorage.setItem('settings', JSON.stringify(settings));
             }
             //
 
@@ -181,9 +185,6 @@ const Summary = () => {
 
             let con_dec_price = await getDECPrice(settings.currency);
             let con_sps_price = await getSPSPrice(settings.currency);
-
-            console.log(settings.currency);
-            console.log(con_dec_price);
 
             dispatch(SummarySlice.actions.setTotal({
                 ...summary.total,
